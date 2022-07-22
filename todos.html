@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Todos Vue.js</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="todos.js" defer></script>
+    <style>
+      .item {
+        font-family: 'Courier New', Courier, monospace;
+      }
+      .completed {
+        color: lightgray;
+        transition: color 1s ease;
+        text-decoration-line: line-through;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>To-Do's</h1>
+    <div id="app">
+      Add a To-Do<br>
+      Title: <input type="text" v-model="title">
+      <button v-on:click="pushTodo()">{{ message }}</button>
+      <div v-for="todo in todos">
+        <div class="item">
+          <p v-bind:class="{completed: todo.completed}">
+            User ID: {{ todo.userId }}<br>
+            ID: {{ todo.id }}<br>
+            To-Do: "{{ todo.title }}"<br>
+            <button v-on:click="todo.completed = !todo.completed">Change Completed Status</button><br><br>
+          </p>
+        </div>
+      </div> 
+    </div>
+  </body>
+</html>

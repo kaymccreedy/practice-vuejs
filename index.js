@@ -10,8 +10,9 @@ var App = {
       feelings: [],
       feeling: "",
       showInfo: true,
-      toggle: "Toggle",
+      color_toggle: "Rust",
       checked: false,
+      selected: "",
     };
   },
   methods: {

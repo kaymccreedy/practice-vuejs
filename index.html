@@ -2,9 +2,39 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Practice Vue.js</title>
+    <title>A Brief OverVue</title>
     <script src="https://unpkg.com/vue@next"></script>
     <script src="index.js" defer></script>
+    <style>
+      .rust {
+        color: #b7410e;
+        transition: color 1s ease;
+      }
+      .gamboge {
+        color: #e49b0f;
+        transition: color 1s ease;
+      }
+      .olivine {
+        color: #9ab973;
+        transition: color 1s ease;
+      }
+      .blue_green {
+        color: #0d98ba;
+        transition: color 1s ease;
+      }
+      .iris {
+        color: #5a4fcf;
+        transition: color 1s ease;
+      }
+      .light_thulian_pink {
+        color: #e68fac;
+        transition: color 1s ease;
+      }
+      .disabled {
+        color: #F0F0F0;
+        transition: color 2s ease;
+      }
+    </style>
   </head>
 
   <body>
@@ -32,11 +62,16 @@
       <button v-on:click="addFeeling()"><em>Tell Me How You Really Feel</em></button>
       <br><br>
       <button v-on:click="showInfo = !showInfo">Toggle</button>
-      <p v-if="showInfo">Now You See Me</p>
-      <br><br>
       <input type="checkbox" id="checkbox" v-model="checked">
-      <label for="checkbox">{{ toggle }}</label>
-      <p v-if="checked">Now You See Me</p>
+      <label for="checkbox">{{ color_toggle }}</label>
+      <!-- <select v-model="selected">
+        <option disabled value="">Pick a color!</option>
+        <option>Rust</option>
+      </select> -->
+      <div v-bind:class="{rust: checked}">
+        <h4 v-bind:class="{disabled: !showInfo}">Now You See Me</h4>
+      </div>
+
 
     </div>
   </body>
