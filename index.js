@@ -5,11 +5,13 @@ var App = {
     return {
       message: "Welcome to Actualize Coding Bootcamp",
       text: "It's week 5, we're starting in on Javascript, and we are testing",
-      question: "How does that make you feel?",
+      question: "How does all this testing make you feel?",
       answer: "",
-      radio1: "Good",
-      radio2: "Bad",
-      feelings: "Feelings",
+      feelings: [],
+      feeling: "",
+      showInfo: true,
+      toggle: "Toggle",
+      checked: false,
     };
   },
   methods: {
@@ -18,6 +20,10 @@ var App = {
     },
     lessTesting: function () {
       this.text = "It's week 5, we're starting in on Javascript, and we're just doing a little bit of testing";
+    },
+    addFeeling: function () {
+      this.feelings.push(this.feeling);
+      this.feeling = "";
     },
   },
 };

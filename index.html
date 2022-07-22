@@ -25,13 +25,18 @@
         {{ question }}
       </p>
 
-      <div>{{ feelings }}</div>
-
-      <select v-model="selected">
-        <option disabled value="">Please select one</option>
-        <option>Good</option>
-        <option>Bad</option>
-      </select>
+      <div v-for="feeling in feelings">
+        <p>I feel {{feeling}}</p>
+      </div>
+      <input type="text" v-model="feeling">
+      <button v-on:click="addFeeling()"><em>Tell Me How You Really Feel</em></button>
+      <br><br>
+      <button v-on:click="showInfo = !showInfo">Toggle</button>
+      <p v-if="showInfo">Now You See Me</p>
+      <br><br>
+      <input type="checkbox" id="checkbox" v-model="checked">
+      <label for="checkbox">{{ toggle }}</label>
+      <p v-if="checked">Now You See Me</p>
 
     </div>
   </body>
